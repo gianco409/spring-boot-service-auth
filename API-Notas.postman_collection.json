@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "eeac3e2b-1629-4427-b504-48acc2b0c730",
+		"name": "API-Notas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6189035",
+		"_collection_link": "https://speeding-rocket-112500.postman.co/workspace/PruebaServicioLibros~0c59d271-ae80-46fd-a23d-faad3e9ffd04/collection/6189035-eeac3e2b-1629-4427-b504-48acc2b0c730?action=share&creator=6189035&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Login Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"usergian\",\n  \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Nota",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyZ2lhbiIsImV4cCI6MTY4Njc1MDU3NSwiaWF0IjoxNjg2NzQ5OTc1fQ.BkNWD5BiKjEG6rM_VenJakg9n_E5MbKcY7Kn3LYW-plbyaHnORGOvNMsEllKKAYxFzg72eYYpIJ2m102lMr70D2p0hLKNn1TEJJQR5XQDmFZUF1dE9PqLJ8cO1QxIxJyv8DGInpsIIifaly_7wNUh2g21o38EU_Aex4UGAHSrRymgSi6wBQNf8s9q2kd2onO_m81zyiz2OoAAjVNQcxrrv9JZcAXA0q9_JGCU3lVNlZ3F0UtUBnBEiNjH3M5U6qMz8wl_KA57An1rymQZRJU-fQM91SgMSOH_0X3dpZlV23OOUDr-5oaYV3EYNMby1Z2hiM3Fu7__YX7o4vYOC1dlg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"titulo\": \"Titulo de nota X\",\n  \"mensaje\": \"Esto es el cuerpo\",\n  \"createdAt\": \"2023-06-13T05:19:58.744Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/nota",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"nota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Notas de Usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyZ2lhbiIsImV4cCI6MTY4Njc1MDU3NSwiaWF0IjoxNjg2NzQ5OTc1fQ.BkNWD5BiKjEG6rM_VenJakg9n_E5MbKcY7Kn3LYW-plbyaHnORGOvNMsEllKKAYxFzg72eYYpIJ2m102lMr70D2p0hLKNn1TEJJQR5XQDmFZUF1dE9PqLJ8cO1QxIxJyv8DGInpsIIifaly_7wNUh2g21o38EU_Aex4UGAHSrRymgSi6wBQNf8s9q2kd2onO_m81zyiz2OoAAjVNQcxrrv9JZcAXA0q9_JGCU3lVNlZ3F0UtUBnBEiNjH3M5U6qMz8wl_KA57An1rymQZRJU-fQM91SgMSOH_0X3dpZlV23OOUDr-5oaYV3EYNMby1Z2hiM3Fu7__YX7o4vYOC1dlg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/nota",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"nota"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
