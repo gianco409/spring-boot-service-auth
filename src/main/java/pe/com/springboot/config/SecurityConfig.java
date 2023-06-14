@@ -23,57 +23,25 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 		return http
-	    		//.cors()
-	    		//.and()
-	            .csrf(csrf -> csrf.disable())
-	            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-	            .authorizeHttpRequests()
-	            //.requestMatchers("/login")
-	            .requestMatchers("/login", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html")
-	            .anonymous()
-	            //.permitAll()
-	            .anyRequest()
-	            .authenticated()
-	            .and()
-	            .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-	            .build();
-		
-//		http.csrf()
-//        .disable()
-//        .authorizeHttpRequests()
-//        .requestMatchers("/login", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html")
-//        .permitAll()
-//        .anyRequest()
-//        .authenticated()
-//        .and()
-//        .sessionManagement()
-//        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//        //.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//        .and()
-//        .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
-//        //.authenticationProvider(authenticationProvider)
-//        //.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-//        //.logout()
-//        //.logoutUrl("/api/v1/auth/logout")
-//        //.addLogoutHandler(logoutHandler)
-//        //.logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext());
-//
-//		return http.build();
+				// .cors()
+				// .and()
+				.csrf(csrf -> csrf.disable())
+				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.authorizeHttpRequests()
+				.requestMatchers("/login", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html")
+				.anonymous().anyRequest()
+				.authenticated().and()
+				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt).build();
+
 	}
 
 	@Bean
 	public InMemoryUserDetailsManager userDetails() {
 		return new InMemoryUserDetailsManager(
-				User.withUsername("usergian")
-					.passwordEncoder(passwordEncoder::encode)
-					.password("password")
-					.authorities("read")
-					.build(),
-				User.withUsername("usermarco")
-					.passwordEncoder(passwordEncoder::encode)
-					.password("password")
-					.authorities("read")
-					.build());
+				User.withUsername("usergian").passwordEncoder(passwordEncoder::encode).password("password")
+						.authorities("read").build(),
+				User.withUsername("usermarco").passwordEncoder(passwordEncoder::encode).password("password")
+						.authorities("read").build());
 	}
 
 }
