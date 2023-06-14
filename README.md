@@ -30,15 +30,7 @@ y Swagger UI para la documentación de la API usando OpenAPI 3.
    mvn spring-boot:run
    ```
 
-5. Acceda a la interfaz de usuario Swagger en [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html). Tambien puede usar el archivo API-Notas.postman_collection.json para probar los endpoint del API.
-
-6. Puede usar los siguiente usuarios para la autenticacion: 
-   ```
-   Usuario: usergian | Contraseña: password
-   ```
-   ```
-   Usuario: usermarco | Contraseña: password
-   ```
+5. Acceda a la interfaz de usuario Swagger en [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html). 
 
 ## Features
 
@@ -50,7 +42,14 @@ y Swagger UI para la documentación de la API usando OpenAPI 3.
 
 1. Ejecuta la aplicacion.
 2. Acceda a la interfaz de usuario Swagger en [http://localhost:8088/swagger-ui/index.html](http://localhost:8088/swagger-ui/index.html).
-3. Utilice la interfaz de usuario Swagger para probar los endpoint de la API.
+3. Utilice la interfaz de usuario Swagger para probar los endpoint de la API. Tambien puede usar el archivo API-Notas.postman_collection.json para probar los endpoint del API.
+4. Puede usar los siguiente usuarios para la autenticacion: 
+   ```
+   Usuario: usergian | Contraseña: password
+   ```
+   ```
+   Usuario: usermarco | Contraseña: password
+   ```
 
 ## Acknowledgments
 
